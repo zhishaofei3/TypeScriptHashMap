@@ -1,7 +1,7 @@
 class HashMap {
 	//定义长度
 	//创建一个对象
-	public obj = {};
+	private obj = {};
 
 	/**
 	 * 判断Map是否为空
