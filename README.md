@@ -2,7 +2,7 @@
 TypeScriptHashMap
 
 ### Usage
-```
+```TypeScript
   var map = new HashMap(); 
   map.put("key1","Value1"); 
   map.put("key2","Value2"); 
