@@ -1,5 +1,5 @@
-# TypeScriptHashMap
-TypeScriptHashMap
+# HashMap TypeScript版本
+HashMap TypeScript版本
 
 ### Usage
 ```TypeScript
