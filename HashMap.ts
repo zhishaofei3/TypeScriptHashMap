@@ -82,14 +82,14 @@ class HashMap {
 	 * 获得Map的长度
 	 */
 	public size():number {
-		return length;
+		return this.length;
 	}
 
 	/**
 	 * 清空Map
 	 */
 	public clear():void {
-		length = 0;
+		this.length = 0;
 		this.obj = {};
 	}
 }
