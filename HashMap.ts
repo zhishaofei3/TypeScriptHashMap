@@ -1,6 +1,5 @@
 class HashMap {
 	//定义长度
-	public length = 0;
 	//创建一个对象
 	public obj = {};
 
@@ -8,7 +7,7 @@ class HashMap {
 	 * 判断Map是否为空
 	 */
 	public isEmpty():boolean {
-		return this.length == 0;
+		return Object.keys(this.obj).length == 0;
 	}
 
 	/**
@@ -34,9 +33,6 @@ class HashMap {
 	 *向map中添加数据
 	 */
 	public put(key, value):void {
-		if (!this.containsKey(key)) {
-			this.length++;
-		}
 		this.obj[key] = value;
 	}
 
@@ -51,8 +47,8 @@ class HashMap {
 	 * 根据给定的Key删除一个值
 	 */
 	public remove(key):void {
-		if (this.containsKey(key) && (delete this.obj[key])) {
-			this.length--;
+		if (this.containsKey(key)) {
+			delete this.obj[key]
 		}
 	}
 
@@ -82,14 +78,13 @@ class HashMap {
 	 * 获得Map的长度
 	 */
 	public size():number {
-		return this.length;
+		return Object.keys(this.obj).length;
 	}
 
 	/**
 	 * 清空Map
 	 */
 	public clear():void {
-		this.length = 0;
 		this.obj = {};
 	}
 }

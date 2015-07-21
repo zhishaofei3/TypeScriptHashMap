@@ -1,24 +1,23 @@
 var HashMap = (function () {
     function HashMap() {
-        //定义长度
-        this.length = 0;
-        //创建一个对象
+        //���峤��
+        //����һ������
         this.obj = {};
     }
     /**
-     * 判断Map是否为空
+     * �ж�Map�Ƿ�Ϊ��
      */
     HashMap.prototype.isEmpty = function () {
-        return this.length == 0;
+        return Object.keys(this.obj).length == 0;
     };
     /**
-     * 判断对象中是否包含给定Key
+     * �ж϶������Ƿ���������Key
      */
     HashMap.prototype.containsKey = function (key) {
         return (key in this.obj);
     };
     /**
-     * 判断对象中是否包含给定的Value
+     * �ж϶������Ƿ�����������Value
      */
     HashMap.prototype.containsValue = function (value) {
         for (var key in this.obj) {
@@ -29,30 +28,27 @@ var HashMap = (function () {
         return false;
     };
     /**
-     *向map中添加数据
+     *��map����������
      */
     HashMap.prototype.put = function (key, value) {
-        if (!this.containsKey(key)) {
-            this.length++;
-        }
         this.obj[key] = value;
     };
     /**
-     * 根据给定的Key获得Value
+     * ���ݸ�����Key����Value
      */
     HashMap.prototype.get = function (key) {
         return this.containsKey(key) ? this.obj[key] : null;
     };
     /**
-     * 根据给定的Key删除一个值
+     * ���ݸ�����Keyɾ��һ��ֵ
      */
     HashMap.prototype.remove = function (key) {
-        if (this.containsKey(key) && (delete this.obj[key])) {
-            this.length--;
+        if (this.containsKey(key)) {
+            delete this.obj[key];
         }
     };
     /**
-     * 获得Map中的所有Value
+     * ����Map�е�����Value
      */
     HashMap.prototype.values = function () {
         var _values = new Array();
@@ -62,7 +58,7 @@ var HashMap = (function () {
         return _values;
     };
     /**
-     * 获得Map中的所有Key
+     * ����Map�е�����Key
      */
     HashMap.prototype.keySet = function () {
         var _keys = new Array();
@@ -72,16 +68,15 @@ var HashMap = (function () {
         return _keys;
     };
     /**
-     * 获得Map的长度
+     * ����Map�ĳ���
      */
     HashMap.prototype.size = function () {
-        return this.length;
+        return Object.keys(this.obj).length;
     };
     /**
-     * 清空Map
+     * ����Map
      */
     HashMap.prototype.clear = function () {
-        this.length = 0;
         this.obj = {};
     };
     return HashMap;
